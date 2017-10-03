@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Status Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='stylesheet prefetch' href="{{ static_url("bootstrap-3.3.7-dist/css/bootstrap.min.css") }}" type="text/css"/>
+  <link rel='stylesheet prefetch' href="{{ static_url("bootstrap-3.3.7-dist/css/bootstrap-theme.min.css") }}" type="text/css"/>
+  <style>
+    .white {
+        color: white;
+    }
+    .black {
+        color: black;
+    }
+    body {
+        background: url("{{ static_url("pics/background.png") }}") no-repeat 50% calc(50% + 60px) fixed;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        -o-background-size: contain;
+    }
+    .titlecontainer {
+      margin-top: 25px;
+    }
+    .titletext {
+        font-size: 500%;
+    }
+    .nomachdata {
+        font-size: 250%;
+        color: red;
+    }
+    .boxes {
+        margin-top: 50px;
+    }
+    .col-centered {
+        display: inline-block;
+        float: none;
+    }
+    .row-center {
+        text-align: center;
+    }
+
+
+  /* Custom, iPhone Retina */
+     @media only screen and (max-width : 768px) {
+         body {
+             background: url("{{ static_url("pics/background.png") }}") no-repeat center center fixed;
+         }
+         .titlecontainer {
+           margin-top: 50px;
+         }
+         .titletext {
+             font-size: 250%;
+         }
+         .nomachdata{
+             font-size: 150%;
+             color: red
+         }
+         .boxes {
+             margin-top: 0px;
+         }
+     }
+
+  </style>
+
+
+
+</head>
+
+<body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="nvbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">PlantStar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://{{ home }}">Home</a></li>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://{{ home }}/LoginPage">Log In</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container titlecontainer" id="title">
+        <h1 class="text-center titletext">Machine Status</h1>
+    </div>
+    <div class="container" id="display">
+        <div class="row row-center" id="rowdisplay">
+            <div id="squarez">
+            </div>
+            <div id="squarez2">
+            </div>
+            <div id="nomach">
+                <h1 class="text-center nomachdata blinking">No Machine Data!</h2>
+            </div>
+        </div>
+    </div>
+  <script src="{{ static_url("jquery/jquery-1.9.1.min.js") }}" type="text/javascript"></script>
+  <script src="{{ static_url("bootstrap-3.3.7-dist/js/bootstrap.min.js") }}" type="text/javascript"></script>
+  <script src="{{ static_url("machstats.js") }}" type="text/javascript"></script>
+
+
+
+
+
+</body>
+</html>
